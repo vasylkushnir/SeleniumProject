@@ -35,14 +35,6 @@ public class TestExamples  {
 //            EbayMainPageFactory.open(driver);
 //        }
 //
-//        @AfterTest
-//        public void afterTest() {
-//            if (driver != null) {
-//                driver.quit();
-//                driver = null;
-//            }
-//        }
-
         @AfterMethod
         public void afterMethod() {
             if (driver != null) {
