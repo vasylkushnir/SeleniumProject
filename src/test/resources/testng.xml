@@ -1,0 +1,86 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="testng" verbose="1" >
+    <parameter name="browser" value="firefox"/>
+    <test name="Add product to watchlist">
+        <parameter name="filterCriteria"  value="TV"/>
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="addProductToWatchList"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Find Product by criteria">
+        <parameter name="filterCriteria"  value="TV"/>
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageFactoryFindProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Find Product by incorrect criteria">
+        <parameter name="incorrectFilterCriteria"  value="asdfqwzxds asfdasd sadasdasd"/>
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageObjectFindNoProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Find products cheap than 10 dollars">
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageObjectfindProductsUnder10dolars"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Navigate to register page">
+        <parameter name="titleContains"  value="Sign in or Register | eBay"/>
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="getRegisterPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Navigate to Facebook Page">
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageObjectgoToSocialNetwork"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Log In with correct cred">
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageObjectLogIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Try to log in with incorrect cred">
+        <classes>
+            <class name="TestExamples">
+                <methods>
+                    <include name="pageObjectLogInwithBadCred"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
